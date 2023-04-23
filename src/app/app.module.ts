@@ -6,6 +6,21 @@ import { LoginEtudiantComponent } from './login-etudiant/login-etudiant.componen
 import { AddEtudiantComponent } from './add-etudiant/add-etudiant.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
+import {RouterModule, Routes} from '@angular/router'
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+
+const appRoutes: Routes =[
+  {
+    path:'admin', component: LoginAdminComponent
+  },
+  {
+    path:'',component:LoginEtudiantComponent
+  },
+  {
+    path:'admin/dashboard',component:HomeAdminComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -16,7 +31,11 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
     HomeAdminComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
