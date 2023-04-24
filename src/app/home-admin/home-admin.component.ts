@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home-admin',
   templateUrl: './home-admin.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeAdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  addEtudiant(){
+    this.router.navigate(["admin/add/etudiant"])
+  }
+  traiterDemandes(){
+    this.router.navigate(["admin/demandes"])
+  }
 }

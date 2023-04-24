@@ -2,13 +2,13 @@
 <div class="sidebar-sticky">
   <ul class="nav flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="#" style="background-color: transparent; color: blue;">Liste des étudiants</a>
+      <a class="nav-link" routerLink="admin/add/etudiant" style="background-color: transparent; color: blue;">Liste des étudiants</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" style="background-color: transparent; color: blue;">Ajouter des étudiants</a>
+      <a class="nav-link"  style="background-color: transparent; color: blue;" (click)="addEtudiant()">Ajouter des étudiants</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" style="background-color: transparent; color: blue;">Traiter les demande</a>
+      <a class="nav-link" style="background-color: transparent; color: blue;"(click)="traiterDemandes()">Traiter les demande</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#" style="background-color: transparent; color: blue;">Traiter les réclamations</a>
