@@ -1,30 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { Router } from '@angular/router';
-=======
 import { Router, Routes } from '@angular/router';
 import { AddEtudiantComponent } from '../add-etudiant/add-etudiant.component';
 
->>>>>>> 9d1384abb07c19381d6cd434348fe37d9bb265af
 @Component({
   selector: 'app-home-admin',
   templateUrl: './home-admin.component.html',
   styleUrls: ['./home-admin.component.css']
 })
 export class HomeAdminComponent implements OnInit {
-<<<<<<< HEAD
-
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
-  addEtudiant(){
-    this.router.navigate(["admin/add/etudiant"])
-  }
-  traiterDemandes(){
-    this.router.navigate(["admin/demandes"])
-  }
-=======
 active: string;
   constructor(private router: Router) {
 		this.active = '';
@@ -49,7 +32,6 @@ active: string;
 
   
 
->>>>>>> 9d1384abb07c19381d6cd434348fe37d9bb265af
 }
 
 export const homeAdminChildRoutes: Routes = [

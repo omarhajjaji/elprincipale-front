@@ -34,13 +34,9 @@ const appRoutes: Routes =[
   {
     path:'etudiant/add/reclamation',component:AddRecComponent
   },
-<<<<<<< HEAD
   {
     path:'admin/add/etudiant',component:AddEtudiantComponent
   },
-=======
-
->>>>>>> 9d1384abb07c19381d6cd434348fe37d9bb265af
 ]
 
 @NgModule({

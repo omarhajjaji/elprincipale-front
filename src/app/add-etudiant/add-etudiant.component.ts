@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EtudiantService } from '../services/etudiant.service';
->>>>>>> 9d1384abb07c19381d6cd434348fe37d9bb265af
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-etudiant',
@@ -11,13 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-etudiant.component.css']
 })
 export class AddEtudiantComponent implements OnInit {
-<<<<<<< HEAD
 
-  constructor(private router: Router) { }
-=======
+
+
   formGroup!:FormGroup
   constructor(private etudService:EtudiantService,private router: Router) { }
->>>>>>> 9d1384abb07c19381d6cd434348fe37d9bb265af
+
 
   ngOnInit(): void {
     this.initForm();
@@ -45,11 +41,5 @@ export class AddEtudiantComponent implements OnInit {
       specialite : new FormControl('',[Validators.required]),
       parcours : new FormControl('',[Validators.required]),
     })
-  }
-  addEtudiant(){
-    this.router.navigate(["admin/add/etudiant"])
-  }
-  traiterDemandes(){
-    this.router.navigate(["admin/demandes"])
   }
 }
