@@ -1,49 +1,16 @@
 <div class="container-fluid">
-  <div
-    class="d-flex flex-column justify-content-center align-items-center h-100"
-  >
-    <div class="card border-primary" style="width: 40rem">
-      <div class="card-body">
-        <h5 class="card-title text-primary" style="text-align: center">
-          Importer des étudiants à partir d'un fichier .csv
-        </h5>
-        <div class="text-center">
-          <input class="form-control" type="file" (change)="onChange($event)" />
-
-          <button (click)="onUpload()" class="btn btn-success">Upload</button>
-        </div>
-
-        <!-- Shareable short link of  uploaded file -->
-        <div class="container text-center jumbotron" *ngIf="shortLink">
-          <h2>Succès d'importation</h2>
-        </div>
-      </div>
-    </div>
-    <!--Flag variable is used here-->
-    <div class="container" *ngIf="loading">
-      <h3>Chargement ...</h3>
-    </div>
-  </div>
-  <br />
-  <div class="row">
-    <main
-      role="main"
-      class="col-md-9 ml-sm-auto col-lg-10 px-4 d-flex flex-column justify-content-center align-items-center h-100"
-    >
-      <br /><br />
-
-      <br />
-      <div
-        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-      >
-        <div class="flex-md-nowrap p-0 shadow">
+    <div class="row">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 d-flex flex-column justify-content-center align-items-center h-100">
+      <br><br>
+        
+      <br>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <div class=" flex-md-nowrap p-0 shadow">
           <div class="card border-primary" style="width: 40rem">
             <div class="card-body">
-              <h5 class="card-title text-primary" style="text-align: center">
-                Ajouter un étudiant
-              </h5>
+              <h5 class="card-title text-primary" style="text-align: center;">Modifier Profil</h5>
               <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-              <form (ngSubmit)="addEtudiant()" [formGroup]="formGroup">
+              <form (ngSubmit)="setEtudiant()" [formGroup]="formGroup">
                 <div class="row">
                   <div class="col-md-6">
                     <label for="cin">CIN :</label>
@@ -55,7 +22,7 @@
                     />
                   </div>
                   <div class="col-md-6">
-                    <label for="cin">Nom :</label>
+                    <label for="nom">Nom :</label>
                     <input
                       type="text"
                       class="form-control"
@@ -64,7 +31,7 @@
                     />
                   </div>
                 </div>
-                <br />
+                <br>
                 <div class="row">
                   <div class="col-md-6">
                     <label for="prenom">Prénom :</label>
@@ -85,7 +52,7 @@
                     />
                   </div>
                 </div>
-                <br />
+                <br>
                 <div class="row">
                   <div class="col-md-6">
                     <label for="numtel">Numéro de telephone :</label>
@@ -106,7 +73,7 @@
                     />
                   </div>
                 </div>
-                <br />
+                <br>
                 <div class="row">
                   <div class="col-md-6">
                     <label for="numins">Numéro d'inscription :</label>
@@ -127,7 +94,7 @@
                     />
                   </div>
                 </div>
-                <br />
+                <br>
                 <div class="row">
                   <div class="col-md-6">
                     <label for="groupe">Groupe :</label>
@@ -148,7 +115,7 @@
                     />
                   </div>
                 </div>
-                <br />
+                <br>
                 <div class="row">
                   <div class="col">
                     <label for="diplome">Diplôme :</label>
@@ -160,11 +127,9 @@
                     />
                   </div>
                 </div>
-                <br />
+                <br>
                 <div class="d-flex justify-content-end">
-                  <button class="btn btn-primary mb-4" type="submit">
-                    Ajouter
-                  </button>
+                  <button class="btn btn-primary mb-4" type="submit">Modifier</button>
                 </div>
               </form>
             </div>
@@ -172,5 +137,4 @@
         </div>
       </div>
     </main>
-  </div>
-</div>
+    </div>    

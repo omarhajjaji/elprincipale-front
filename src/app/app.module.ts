@@ -12,6 +12,8 @@ import { AddRecComponent } from './add-rec/add-rec.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SetProfilComponent } from './set-profil/set-profil.component';
+import { ProfilComponent } from './profil/profil.component';;
 import { ListEtudiantComponent } from './list-etudiant/list-etudiant.component';
 import { FilterPipe } from './filter.pipe';
 import { DemandeDashComponent } from './demande-dash/demande-dash.component';
@@ -39,7 +41,15 @@ const appRoutes: Routes =[
   {
     path:'etudiant/add/reclamation',component:AddRecComponent
   },
-
+  {
+    path:'admin/add/etudiant',component:AddEtudiantComponent
+  },
+  {
+    path:'etudiant/set/etudiant',component:SetProfilComponent
+  },
+  {
+    path:'etudiant/profil',component:ProfilComponent
+  },
 ]
 
 @NgModule({
@@ -56,7 +66,9 @@ const appRoutes: Routes =[
     FilterPipe,
     DemandeDashComponent,
     ArchiveDemandeComponent,
-    ReclamationDashComponent
+    ReclamationDashComponent,
+    SetProfilComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

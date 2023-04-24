@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 @Component({
-  selector: 'app-demande-attest',
-  templateUrl: './demande-attest.component.html',
-  styleUrls: ['./demande-attest.component.css']
+  selector: 'app-set-profil',
+  templateUrl: './set-profil.component.html',
+  styleUrls: ['./set-profil.component.css']
 })
-export class DemandeAttestComponent implements OnInit {
+export class SetProfilComponent implements OnInit {
   formGroup!:FormGroup
   constructor() { }
 
   ngOnInit(): void {
   }
-  addDemande(){
+  setEtudiant(){
     if(this.formGroup.valid){
     
     }

@@ -9,6 +9,9 @@ import { FileUploadService } from '../services/file-upload.service';
   styleUrls: ['./add-etudiant.component.css']
 })
 export class AddEtudiantComponent implements OnInit {
+
+
+
   formGroup!:FormGroup
 
     // Variable to store shortLink from api response
