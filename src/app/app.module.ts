@@ -25,6 +25,15 @@ const appRoutes: Routes =[
     path:'admin/dashboard',component:HomeAdminComponent,
     children:homeAdminChildRoutes
   },
+  {
+    path:'etudiant/demande/attest',component:DemandeAttestComponent
+  },
+  {
+    path:'etudiant/home',component:HomeEtudiantComponent
+  },
+  {
+    path:'etudiant/add/reclamation',component:AddRecComponent
+  },
 
 ]
 
