@@ -1,23 +1,73 @@
-<nav class="navbar bg-light">
+<!-- Side Bar -->
+<nav
+  class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2"
+  style="z-index: 1; width: 250px"
+  id="mySidebar"
+>
+  <!-- Sidebar Links -->
+  <a
+    class="w3-bar-item w3-button"
+    [ngClass]="{ 'bg-primary text-white': active == '/' }"
+    routerLink="/"
+  >
+    <i class="w3-medium fa fa-user"></i> Liste des étudiants</a
+  >
+  <a
+    class="w3-bar-item w3-button"
+    routerLink="/admin/dashboard/add"
+    [ngClass]="{ 'bg-primary text-white': active == '/admin/dashboard/add' }"
+  >
+    <i class="w3-medium fa fa-plus"></i>Ajouter des étudiants</a
+  >
+  <a
+    class="w3-bar-item w3-button"
+    [ngClass]="{ 'bg-primary text-white': active == '/' }"
+    routerLink="/"
+  >
+    <i class="w3-medium fa fa-user"></i> Traiter les demandes</a
+  >
+  <a
+    class="w3-bar-item w3-button"
+    [ngClass]="{ 'bg-primary text-white': active == '/' }"
+    routerLink="/"
+  >
+    <i class="w3-medium fa fa-user"></i> Traiter les réclamations</a
+  >
+  <a
+    class="w3-bar-item w3-button"
+    [ngClass]="{ 'bg-primary text-white': active == '/' }"
+    routerLink="/"
+  >
+    <i class="w3-medium fa fa-user"></i> Archives des demandes</a
+  >
+  <a class="w3-bar-item w3-button" (click)="logOut()"
+    ><i class="w3-medium fa fa-sign-out"></i> Logout</a
+  >
+</nav>
+<!-- Load main contents -->
+<div class="w3-main" style="margin-left: 250px">
+  <div class="w3-container">
+    <!-- Initiate Child Routing -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<!-- <nav class="navbar bg-light">
 
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <span>  <a class="nav-link" href="#">Liste des étudiants</a></span>
-      </li>
-      <li class="nav-item">
-        <span><a class="nav-link" href="#">Ajouter des étudiants</a></span>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Traiter les demandes</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Traiter les réclamations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Archives des demandes</a>
-      </li>
-    </ul>
-  
-  </nav>
-  
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <span> <a class="nav-link" href="#">Liste des étudiants</a></span>
+    </li>
+    <li class="nav-item">
+      <span><a class="nav-link" href="#">Ajouter des étudiants</a></span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Traiter les demandes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Traiter les réclamations</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Archives des demandes</a>
+    </li>
+  </ul>
+</nav> -->
