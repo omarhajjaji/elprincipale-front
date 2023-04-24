@@ -10,7 +10,7 @@ import { HomeEtudiantComponent } from './home-etudiant/home-etudiant.component';
 import { DemandeAttestComponent } from './demande-attest/demande-attest.component';
 import { AddRecComponent } from './add-rec/add-rec.component';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const appRoutes: Routes =[
   {
@@ -30,7 +30,10 @@ const appRoutes: Routes =[
   },
   {
     path:'etudiant/add/reclamation',component:AddRecComponent
-  }
+  },
+  {
+    path:'admin/add/etudiant',component:AddEtudiantComponent
+  },
 ]
 
 @NgModule({
