@@ -6,13 +6,9 @@ import { LoginEtudiantComponent } from './login-etudiant/login-etudiant.componen
 import { AddEtudiantComponent } from './add-etudiant/add-etudiant.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
-<<<<<<< HEAD
 import { HomeEtudiantComponent } from './home-etudiant/home-etudiant.component';
 import { DemandeAttestComponent } from './demande-attest/demande-attest.component';
 import { AddRecComponent } from './add-rec/add-rec.component';
-
-=======
-import {RouterModule, Routes} from '@angular/router'
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
@@ -25,9 +21,17 @@ const appRoutes: Routes =[
   },
   {
     path:'admin/dashboard',component:HomeAdminComponent
+  },
+  {
+    path:'etudiant/demande/attest',component:DemandeAttestComponent
+  },
+  {
+    path:'etudiant/home',component:HomeEtudiantComponent
+  },
+  {
+    path:'etudiant/add/reclamation',component:AddRecComponent
   }
 ]
->>>>>>> 5fdc4d28fa477496ba1364a707e859e9daf46734
 
 @NgModule({
   declarations: [
