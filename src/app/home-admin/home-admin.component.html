@@ -7,8 +7,8 @@
   <!-- Sidebar Links -->
   <a
     class="w3-bar-item w3-button"
-    [ngClass]="{ 'bg-primary text-white': active == '/' }"
-    routerLink="/"
+    [ngClass]="{ 'bg-primary text-white': active == '/admin/dashboard' }"
+    routerLink="/admin/dashboard"
   >
     <i class="w3-medium fa fa-user"></i> Liste des étudiants</a
   >
@@ -21,22 +21,28 @@
   >
   <a
     class="w3-bar-item w3-button"
-    [ngClass]="{ 'bg-primary text-white': active == '/' }"
-    routerLink="/"
+    [ngClass]="{
+      'bg-primary text-white': active == '/admin/dashboard/demande'
+    }"
+    routerLink="/admin/dashboard/demande"
   >
     <i class="w3-medium fa fa-user"></i> Traiter les demandes</a
   >
   <a
     class="w3-bar-item w3-button"
-    [ngClass]="{ 'bg-primary text-white': active == '/' }"
-    routerLink="/"
+    [ngClass]="{
+      'bg-primary text-white': active == '/admin/dashboard/reclamation'
+    }"
+    routerLink="/admin/dashboard/reclamation"
   >
     <i class="w3-medium fa fa-user"></i> Traiter les réclamations</a
   >
   <a
     class="w3-bar-item w3-button"
-    [ngClass]="{ 'bg-primary text-white': active == '/' }"
-    routerLink="/"
+    [ngClass]="{
+      'bg-primary text-white': active == '/admin/dashboard/archive'
+    }"
+    routerLink="/admin/dashboard/archive"
   >
     <i class="w3-medium fa fa-user"></i> Archives des demandes</a
   >

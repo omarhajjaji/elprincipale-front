@@ -5,6 +5,32 @@
     <div class="card border-primary" style="width: 40rem">
       <div class="card-body">
         <h5 class="card-title text-primary" style="text-align: center">
+          Importer des étudiants à partir d'un fichier .csv
+        </h5>
+        <div class="text-center">
+          <input class="form-control" type="file" (change)="onChange($event)" />
+
+          <button (click)="onUpload()" class="btn btn-success">Upload</button>
+        </div>
+
+        <!-- Shareable short link of  uploaded file -->
+        <div class="container text-center jumbotron" *ngIf="shortLink">
+          <h2>Succès d'importation</h2>
+        </div>
+      </div>
+    </div>
+    <!--Flag variable is used here-->
+    <div class="container" *ngIf="loading">
+      <h3>Chargement ...</h3>
+    </div>
+  </div>
+  <br />
+  <div
+    class="d-flex flex-column justify-content-center align-items-center h-100"
+  >
+    <div class="card border-primary" style="width: 40rem">
+      <div class="card-body">
+        <h5 class="card-title text-primary" style="text-align: center">
           Ajouter un étudiant
         </h5>
         <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->

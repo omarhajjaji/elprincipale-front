@@ -1,0 +1,84 @@
+<div class="w3-container" *ngIf="etudiantListData">
+  <br />
+  <span
+    ><i class="w3-medium fa fa-search"></i> Search :
+    <input class="" type="text" [(ngModel)]="filterData"
+  /></span>
+
+  <div
+    class="w3-panel w3-green"
+    *ngIf="(etudiantListData | filter : filterData).length == 0"
+  >
+    <h3>Oh no</h3>
+    <p>
+      Pas d'étudiants trouvés
+      <span *ngIf="filterData"> with search "{{ filterData }}"</span>
+    </p>
+  </div>
+  <div
+    class="w3-panel w3-light-grey w3-padding-16 w3-card-2"
+    *ngIf="
+      (etudiantListData | filter : filterData | filter : filterData).length != 0
+    "
+  >
+    <table class="w3-table w3-striped w3-bordered">
+      <tr>
+        <th><i class="w3-medium custom-icon fa fa-refresh"></i> No.</th>
+        <th><i class="w3-medium custom-icon fa fa-refresh"></i> CIN. No.</th>
+        <!-- <th>ID</th> -->
+        <th><i class="w3-medium custom-icon fa fa-user"></i> Nom</th>
+        <th><i class="w3-medium custom-icon fa fa-user"></i> Prenom</th>
+        <th><i class="w3-medium custom-icon fa fa-envelope-o"></i> Email</th>
+        <th><i class="w3-medium custom-icon fa fa-phone"></i> Telephone</th>
+        <th><i class="w3-medium custom-icon fa fa-phone"></i> Specialite</th>
+        <th><i class="w3-medium custom-icon fa fa-phone"></i> Niveau</th>
+        <th><i class="w3-medium custom-icon fa fa-phone"></i> Groupe</th>
+        <th><i class="w3-medium custom-icon fa fa-trash"></i> Delete</th>
+      </tr>
+      <tr
+        *ngFor="
+          let etudiant of etudiantListData | filter : filterData;
+          index as i
+        "
+        appHighlightStudent
+      >
+        <td>{{ i + 1 }}</td>
+        <td>{{ etudiant.cin }}</td>
+        <td class="pointer">
+          {{ etudiant.nom }}
+        </td>
+        <td class="pointer">
+          {{ etudiant.prenom }}
+        </td>
+        <td class="pointer">
+          {{ etudiant.email }}
+        </td>
+        <td class="pointer">
+          {{ etudiant.numTel }}
+        </td>
+        <td class="pointer">
+          {{ etudiant.specialite }}
+        </td>
+        <td class="pointer">
+          {{ etudiant.niveau }}
+        </td>
+        <td class="pointer">
+          {{ etudiant.groupe }}
+        </td>
+        <!-- <td>
+          <button [routerLink]="['update', i]" class="w3-button w3-blue">
+            Update
+          </button>
+        </td> -->
+        <td>
+          <button
+            (click)="deleteEtudiant(etudiant.cin)"
+            class="w3-button w3-red"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

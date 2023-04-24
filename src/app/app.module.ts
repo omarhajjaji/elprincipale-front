@@ -11,7 +11,12 @@ import { DemandeAttestComponent } from './demande-attest/demande-attest.componen
 import { AddRecComponent } from './add-rec/add-rec.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ListEtudiantComponent } from './list-etudiant/list-etudiant.component';
+import { FilterPipe } from './filter.pipe';
+import { DemandeDashComponent } from './demande-dash/demande-dash.component';
+import { ArchiveDemandeComponent } from './archive-demande/archive-demande.component';
+import { ReclamationDashComponent } from './reclamation-dash/reclamation-dash.component'
 
 const appRoutes: Routes =[
   {
@@ -46,7 +51,12 @@ const appRoutes: Routes =[
     HomeAdminComponent,
     HomeEtudiantComponent,
     DemandeAttestComponent,
-    AddRecComponent
+    AddRecComponent,
+    ListEtudiantComponent,
+    FilterPipe,
+    DemandeDashComponent,
+    ArchiveDemandeComponent,
+    ReclamationDashComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,62 @@
+<div class="w3-container" *ngIf="demandeListData">
+  <br />
+  <div class="w3-panel w3-green" *ngIf="demandeListData.length == 0">
+    <h3>Tout est bon!</h3>
+    <p>Pas de demandes à traiter</p>
+  </div>
+  <div
+    class="w3-panel w3-light-grey w3-padding-16 w3-card-2"
+    *ngIf="demandeListData.length != 0"
+  >
+    <table class="w3-table w3-striped w3-bordered">
+      <tr>
+        <th><i class="w3-medium custom-icon fa fa-refresh"></i> No.</th>
+        <th><i class="w3-medium custom-icon fa fa-refresh"></i> Type</th>
+        <!-- <th>ID</th> -->
+        <th><i class="w3-medium custom-icon fa fa-refresh"></i>CIN</th>
+        <th><i class="w3-medium custom-icon fa fa-user"></i> Nom</th>
+        <th><i class="w3-medium custom-icon fa fa-user"></i> Prenom</th>
+        <th><i class="w3-medium custom-icon fa fa-envelope-o"></i> Raison</th>
+        <th>
+          <i class="w3-medium custom-icon fa fa-envelope-o"></i> Date d'ajout
+        </th>
+      </tr>
+      <tr
+        *ngFor="let demande of demandeListData; index as i"
+        appHighlightStudent
+      >
+        <td>{{ i + 1 }}</td>
+        <td>{{ demande.typeD }}</td>
+        <td>{{ demande.etudiant.cin }}</td>
+        <td class="pointer">
+          {{ demande.etudiant.nom }}
+        </td>
+        <td class="pointer">
+          {{ demande.etudiant.prenom }}
+        </td>
+        <td class="pointer">
+          {{ demande.raison }}
+        </td>
+        <td class="pointer">
+          {{ demande.dateDemande }}
+        </td>
+        <td>
+          <button
+            (click)="accepterDemande(demande.idDemande, demande.etudiant)"
+            class="w3-button w3-blue"
+          >
+            Accepter
+          </button>
+        </td>
+        <td>
+          <button
+            (click)="refuserDemande(demande.idDemande)"
+            class="w3-button w3-red"
+          >
+            Refuser
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -8,7 +8,7 @@ export const environment = {
   production: false
 };
 export const baseUrl = "http://localhost:8081/";
-export const headers = new HttpHeaders({
+export let headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
   })

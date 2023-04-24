@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Routes } from '@angular/router';
 import { AddEtudiantComponent } from '../add-etudiant/add-etudiant.component';
+import { ListEtudiantComponent } from '../list-etudiant/list-etudiant.component';
+import { DemandeDashComponent } from '../demande-dash/demande-dash.component';
+import { ArchiveDemandeComponent } from '../archive-demande/archive-demande.component';
+import { ReclamationDashComponent } from '../reclamation-dash/reclamation-dash.component';
 
 @Component({
   selector: 'app-home-admin',
@@ -39,16 +43,20 @@ export const homeAdminChildRoutes: Routes = [
 		path: 'add',
 		component: AddEtudiantComponent
 	},
-	// {
-	// 	path: 'add',
-	// 	component: StudentAddComponent
-	// },
-	// {
-	// 	path: 'update/:id',
-	// 	component: StudentAddComponent
-	// },
-	// {
-	// 	path: 'detail/:id',
-	// 	component: StudentDetailsComponent
-	// }
+	{
+		path: '',
+		component: ListEtudiantComponent
+	},
+	{
+		path: 'demande',
+		component: DemandeDashComponent
+	},
+	{
+		path: 'archive',
+		component: ArchiveDemandeComponent
+	},
+	{
+		path: 'reclamation',
+		component: ReclamationDashComponent
+	}
 ];

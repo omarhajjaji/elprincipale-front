@@ -6,34 +6,35 @@ import { baseUrl } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class EtudiantService {
+export class ReclamationService {
 headers:any;
-  constructor(private http:HttpClient) {
+    constructor(private http:HttpClient) {
     this.headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
   })
-   }
+  }
+    getAllReclamation():Observable<any>{
+    this.headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+    })
+    return this.http.get(`${baseUrl}reclamation/get-all`,{ headers: this.headers});
+  }
+  accepterReclamation(id:any):Observable<any>{
+    this.headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+    })
+    console.log(this.headers)
+    return this.http.put(`${baseUrl}reclamation/etat/${id}/set/fournie`,{},{ headers: this.headers});
+  }
 
-  createEtudiant(etud: any):Observable<any>{
-   this.headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
-  })
-    return this.http.post(`${baseUrl}student/add`, etud,{ headers: this.headers});
-  }
-  getAllEtudiants():Observable<any>{
+  refuserReclamation(id:any):Observable<any>{
     this.headers = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': `Bearer ${localStorage.getItem('token')}`
-  })
-    return this.http.get(`${baseUrl}student/get-all`,{ headers: this.headers});
-  }
-  deleteEtudiant(cin:any):Observable<any>{
-    this.headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
-  })
-    return this.http.delete(`${baseUrl}student/delete/${cin}`,{ headers: this.headers});
+    })
+    return this.http.put(`${baseUrl}reclamation/etat/${id}/set/refusee`,{},{ headers: this.headers});
   }
 }

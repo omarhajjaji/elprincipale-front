@@ -1,0 +1,57 @@
+<div class="w3-container" *ngIf="reclamationListData">
+  <br />
+  <div class="w3-panel w3-green" *ngIf="reclamationListData.length == 0">
+    <h3>Tout est bon!</h3>
+    <p>Pas de réclamations à traiter</p>
+  </div>
+  <div
+    class="w3-panel w3-light-grey w3-padding-16 w3-card-2"
+    *ngIf="reclamationListData.length != 0"
+  >
+    <table class="w3-table w3-striped w3-bordered">
+      <tr>
+        <th><i class="w3-medium custom-icon fa fa-refresh"></i> No.</th>
+        <th><i class="w3-medium custom-icon fa fa-user"></i> CIN</th>
+        <th><i class="w3-medium custom-icon fa fa-user"></i> Nom</th>
+        <th><i class="w3-medium custom-icon fa fa-user"></i> Prenom</th>
+        <th><i class="w3-medium custom-icon fa fa-envelope-o"></i> Raison</th>
+        <th><i class="w3-medium custom-icon fa fa-user"></i> Date d'ajout</th>
+        <th><i class="w3-medium custom-icon fa fa-envelope-o"></i> Etat</th>
+      </tr>
+      <tr
+        *ngFor="let reclamation of reclamationListData; index as i"
+        appHighlightStudent
+      >
+        <td>{{ i + 1 }}</td>
+        <td>{{ reclamation.etudiant.cin }}</td>
+        <td>{{ reclamation.etudiant.nom }}</td>
+        <td>{{ reclamation.etudiant.prenom }}</td>
+        <td class="pointer">
+          {{ reclamation.description }}
+        </td>
+        <td class="pointer">
+          {{ reclamation.dateReclamation }}
+        </td>
+        <td class="pointer">
+          {{ reclamation.etatRec }}
+        </td>
+        <td *ngIf="reclamation.etatRec == 'ENCOURS'">
+          <button
+            (click)="traiterReclam(reclamation.idReclamation)"
+            class="w3-button w3-blue"
+          >
+            Marquer comme traitée
+          </button>
+        </td>
+        <td *ngIf="reclamation.etatRec == 'ENCOURS'">
+          <button
+            (click)="refuserReclam(reclamation.idReclamation)"
+            class="w3-button w3-red"
+          >
+            Refuser
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
