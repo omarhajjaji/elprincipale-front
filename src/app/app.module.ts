@@ -5,22 +5,25 @@ import { AppComponent } from './app.component';
 import { LoginEtudiantComponent } from './login-etudiant/login-etudiant.component';
 import { AddEtudiantComponent } from './add-etudiant/add-etudiant.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
-import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { HomeAdminComponent , homeAdminChildRoutes} from './home-admin/home-admin.component';
 import { HomeEtudiantComponent } from './home-etudiant/home-etudiant.component';
 import { DemandeAttestComponent } from './demande-attest/demande-attest.component';
 import { AddRecComponent } from './add-rec/add-rec.component';
+
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 const appRoutes: Routes =[
   {
-    path:'admin', component: LoginAdminComponent
+    path:'admin', component: LoginAdminComponent,
+    
   },
   {
     path:'',component:LoginEtudiantComponent
   },
   {
-    path:'admin/dashboard',component:HomeAdminComponent
+    path:'admin/dashboard',component:HomeAdminComponent,
+    children:homeAdminChildRoutes
   },
   {
     path:'etudiant/demande/attest',component:DemandeAttestComponent
@@ -31,9 +34,13 @@ const appRoutes: Routes =[
   {
     path:'etudiant/add/reclamation',component:AddRecComponent
   },
+<<<<<<< HEAD
   {
     path:'admin/add/etudiant',component:AddEtudiantComponent
   },
+=======
+
+>>>>>>> 9d1384abb07c19381d6cd434348fe37d9bb265af
 ]
 
 @NgModule({
