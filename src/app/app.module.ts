@@ -12,6 +12,8 @@ import { AddRecComponent } from './add-rec/add-rec.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SetProfilComponent } from './set-profil/set-profil.component';
+import { ProfilComponent } from './profil/profil.component';
 
 const appRoutes: Routes =[
   {
@@ -37,6 +39,12 @@ const appRoutes: Routes =[
   {
     path:'admin/add/etudiant',component:AddEtudiantComponent
   },
+  {
+    path:'etudiant/set/etudiant',component:SetProfilComponent
+  },
+  {
+    path:'etudiant/profil',component:ProfilComponent
+  },
 ]
 
 @NgModule({
@@ -48,7 +56,9 @@ const appRoutes: Routes =[
     HomeAdminComponent,
     HomeEtudiantComponent,
     DemandeAttestComponent,
-    AddRecComponent
+    AddRecComponent,
+    SetProfilComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,

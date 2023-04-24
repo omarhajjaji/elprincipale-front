@@ -9,7 +9,7 @@
         <div class="card-body">
           <h5 class="card-title text-primary" style="text-align: center;">Réclamation</h5>
           <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-          <form>
+          <form (ngSubmit)="addReclamation()" [formGroup]="formGroup">
             <div class="form-group">
               <label for="formGroupExampleInput">Description:</label>
               <input
