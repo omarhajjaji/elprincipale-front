@@ -30,6 +30,14 @@ headers:any;
     return this.http.put(`${baseUrl}reclamation/etat/${id}/set/fournie`,{},{ headers: this.headers});
   }
 
+  addReclamation(form:any):Observable<any>{
+        this.headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+    })
+    return this.http.post(`${baseUrl}reclamation/add`,form,{ headers: this.headers});
+  }
+
   refuserReclamation(id:any):Observable<any>{
     this.headers = new HttpHeaders({
     'Content-Type': 'application/json',

@@ -21,6 +21,8 @@ headers:any;
     })
     return this.http.get(`${baseUrl}demande/get-all-encours`,{ headers: this.headers});
   }
+
+
   accepterDemande(id:any):Observable<any>{
     this.headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -51,5 +53,19 @@ headers:any;
     'Authorization': `Bearer ${localStorage.getItem('token')}`
     })
     return this.http.get(`${baseUrl}demande/get-all`,{ headers: this.headers});
+  }
+  addDemande(form:any):Observable<any>{
+    this.headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+    })
+    return this.http.post(`${baseUrl}demande/add`,form,{ headers: this.headers});
+  }
+  getDemandeByEtudiant(cin:any):Observable<any>{
+    this.headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+    })
+    return this.http.get(`${baseUrl}demande/get/${cin}`,{ headers: this.headers});
   }
 }

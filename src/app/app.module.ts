@@ -18,7 +18,8 @@ import { ListEtudiantComponent } from './list-etudiant/list-etudiant.component';
 import { FilterPipe } from './filter.pipe';
 import { DemandeDashComponent } from './demande-dash/demande-dash.component';
 import { ArchiveDemandeComponent } from './archive-demande/archive-demande.component';
-import { ReclamationDashComponent } from './reclamation-dash/reclamation-dash.component'
+import { ReclamationDashComponent } from './reclamation-dash/reclamation-dash.component';
+import { SuiviDemandeComponent } from './suivi-demande/suivi-demande.component'
 
 const appRoutes: Routes =[
   {
@@ -40,6 +41,8 @@ const appRoutes: Routes =[
   },
   {
     path:'etudiant/add/reclamation',component:AddRecComponent
+  },{
+    path:'etudiant/demandes',component:SuiviDemandeComponent
   },
   {
     path:'admin/add/etudiant',component:AddEtudiantComponent
@@ -68,7 +71,8 @@ const appRoutes: Routes =[
     ArchiveDemandeComponent,
     ReclamationDashComponent,
     SetProfilComponent,
-    ProfilComponent
+    ProfilComponent,
+    SuiviDemandeComponent
   ],
   imports: [
     BrowserModule,

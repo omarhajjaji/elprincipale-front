@@ -17,9 +17,10 @@ export class LoginAdminComponent implements OnInit {
   doLogin(){
     if(this.formGroup.valid){
       this.accService.onLogin(this.formGroup.value).subscribe( result =>{
-          console.log(result)
-          this.accService.storeToken(result["token"])
+          // console.log(result)
+          this.accService.storeTokenAdmin(result)
           this.router.navigate(["/admin/dashboard"])
+          
       })
     }
   }

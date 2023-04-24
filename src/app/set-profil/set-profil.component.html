@@ -1,27 +1,25 @@
 <div class="container-fluid">
-    <div class="row">
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 d-flex flex-column justify-content-center align-items-center h-100">
-      <br><br>
-        
-      <br>
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <div class=" flex-md-nowrap p-0 shadow">
+  <div class="row">
+    <main
+      role="main"
+      class="col-md-9 ml-sm-auto col-lg-10 px-4 d-flex flex-column justify-content-center align-items-center h-100"
+    >
+      <br /><br />
+
+      <br />
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      >
+        <div class="flex-md-nowrap p-0 shadow">
           <div class="card border-primary" style="width: 40rem">
             <div class="card-body">
-              <h5 class="card-title text-primary" style="text-align: center;">Modifier Profil</h5>
+              <h5 class="card-title text-primary" style="text-align: center">
+                Modifier Profil
+              </h5>
               <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
               <form (ngSubmit)="setEtudiant()" [formGroup]="formGroup">
                 <div class="row">
-                  <div class="col-md-6">
-                    <label for="cin">CIN :</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="cin"
-                      placeholder="CIN"
-                    />
-                  </div>
-                  <div class="col-md-6">
+                  <div class="col">
                     <label for="nom">Nom :</label>
                     <input
                       type="text"
@@ -31,7 +29,7 @@
                     />
                   </div>
                 </div>
-                <br>
+                <br />
                 <div class="row">
                   <div class="col-md-6">
                     <label for="prenom">Prénom :</label>
@@ -52,7 +50,7 @@
                     />
                   </div>
                 </div>
-                <br>
+                <br />
                 <div class="row">
                   <div class="col-md-6">
                     <label for="numtel">Numéro de telephone :</label>
@@ -69,11 +67,11 @@
                       type="Text"
                       class="form-control"
                       id="datenaiss"
-                      placeholder="Date de Naissance"
+                      placeholder="20/03/1956"
                     />
                   </div>
                 </div>
-                <br>
+                <br />
                 <div class="row">
                   <div class="col-md-6">
                     <label for="numins">Numéro d'inscription :</label>
@@ -94,7 +92,7 @@
                     />
                   </div>
                 </div>
-                <br>
+                <br />
                 <div class="row">
                   <div class="col-md-6">
                     <label for="groupe">Groupe :</label>
@@ -115,7 +113,7 @@
                     />
                   </div>
                 </div>
-                <br>
+                <br />
                 <div class="row">
                   <div class="col">
                     <label for="diplome">Diplôme :</label>
@@ -127,9 +125,11 @@
                     />
                   </div>
                 </div>
-                <br>
+                <br />
                 <div class="d-flex justify-content-end">
-                  <button class="btn btn-primary mb-4" type="submit">Modifier</button>
+                  <button class="btn btn-primary mb-4" type="submit">
+                    Modifier
+                  </button>
                 </div>
               </form>
             </div>
@@ -137,4 +137,5 @@
         </div>
       </div>
     </main>
-    </div>    
+  </div>
+</div>

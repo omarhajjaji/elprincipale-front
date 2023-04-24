@@ -1,45 +1,50 @@
 <div class="container">
-    <div
-      class="d-flex flex-column justify-content-center align-items-center h-100"
-    >
-      <div class="container d-flex justify-content-center m-3 text-primary">
-       <br>
-      </div>
-      <div class="card border-primary" style="width: 40rem">
-        <div class="card-body">
-          <h5 class="card-title text-primary" style="text-align: center;">Détails de l'étudiant</h5>
-          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-          <div class="row">
-            <div class="col-md-6">
-                <label for="cin">CIN :</label>
-                <br>
-                <label for="nom">Nom :</label>
-                <br>
-                <label for="prenom">Prénom :</label>
-                <br>
-                <label for="email">Email :</label>
-                <br>
-                <label for="numtel">Numéro de Téléphone :</label>
-                <br>
-                <label for="datenaiss">Date de Naissance :</label>
-                <br>
-                <label for="numins">Numéro d'inscription :</label>
-                <br>
-                <label for="niveau">Niveau :</label>
-                <br>
-                <label for="groupe">Groupe :</label>
-                <br>
-                <label for="specialite">Spécialité :</label>
-                <br>
-                <label for="diplome">Diplôme :</label>
-              </div>
-
+  <div
+    class="d-flex flex-column justify-content-center align-items-center h-100"
+  >
+    <div class="container d-flex justify-content-center m-3 text-primary">
+      <br />
+    </div>
+    <div class="card border-primary" style="width: 45rem">
+      <div class="card-body">
+        <h5 class="card-title text-primary" style="text-align: center">
+          Détails de l'étudiant
+        </h5>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+        <div class="row" *ngIf="etudiant">
+          <div class="col-md-6">
+            <label for="cin">CIN :</label> <span>{{ etudiant.cin }}</span>
+            <br />
+            <label for="nom">Nom :</label><span>{{ etudiant.nom }}</span>
+            <br />
+            <label for="prenom">Prénom :</label
+            ><span>{{ etudiant.prenom }}</span>
+            <br />
+            <label for="email">Email :</label> <span>{{ etudiant.email }}</span>
+            <br />
+            <label for="numtel">Numéro de Téléphone :</label>
+            <span>{{ etudiant.numTel }}</span>
+            <br />
+            <label for="datenaiss">Date de Naissance :</label>
+            <span>{{ etudiant.dateNaiss }}</span>
+            <br />
+            <label for="numins">Numéro d'inscription :</label
+            ><span>{{ etudiant.numInsc }}</span>
+            <br />
+            <label for="niveau">Niveau :</label>
+            <span>{{ etudiant.niveau }}</span>
+            <br />
+            <label for="groupe">Groupe :</label
+            ><span>{{ etudiant.groupe }}</span>
+            <br />
+            <label for="specialite">Spécialité :</label
+            ><span>{{ etudiant.specialite }}</span>
+            <br />
+            <label for="diplome">Diplôme :</label
+            ><span>{{ etudiant.parcours }}</span>
           </div>
-       
         </div>
       </div>
     </div>
   </div>
-  
-
-
+</div>

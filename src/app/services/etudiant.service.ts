@@ -29,6 +29,14 @@ headers:any;
   })
     return this.http.get(`${baseUrl}student/get-all`,{ headers: this.headers});
   }
+  getEtudiantByCin(cin:string):Observable<any>{
+    this.headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token')}`
+  })
+    return this.http.get(`${baseUrl}student/get/${cin}`,{ headers: this.headers});
+  }
+
   deleteEtudiant(cin:any):Observable<any>{
     this.headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -36,4 +44,5 @@ headers:any;
   })
     return this.http.delete(`${baseUrl}student/delete/${cin}`,{ headers: this.headers});
   }
+
 }

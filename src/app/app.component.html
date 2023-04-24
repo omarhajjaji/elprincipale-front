@@ -1,11 +1,15 @@
 <nav class="navbar navbar-dark sticky-top bg-primary">
-  <div class="container-fluid">
-    <a
-      class="navbar-brand"
-      href="https://www.enicarthage.rnu.tn/"
-      target="_blank"
-      ><img src="assets/index.png" alt="logo enicar" class="logo" height="55"
-    /></a>
+  <a class="navbar-brand" href="https://www.enicarthage.rnu.tn/" target="_blank"
+    ><img src="assets/index.png" alt="logo enicar" class="logo" height="55"
+  /></a>
+
+  <div
+    class="navbar-text text-white d-flex justify-content-center align-items-center"
+    *ngIf="userData != null"
+  >
+    <h3>{{ userData.prenom + " " + userData.nom }}</h3>
+    <div class="w-10 p-3"></div>
+    <a type="button" href="" (click)="logOut()">Logout</a>
   </div>
 </nav>
 <router-outlet></router-outlet>
