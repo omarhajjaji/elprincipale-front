@@ -19,7 +19,7 @@ export class AddRecComponent implements OnInit {
     if(this.formGroup.valid){
       let form = this.formGroup.value
       form.etudiant=this.appComp.userData
-      form.etudiant.date=""
+      form.etudiant.dateNaiss=""
       this.reclamationServ.addReclamation(form).subscribe(result=>{
           this.router.navigate(['/etudiant/home'])
       })
